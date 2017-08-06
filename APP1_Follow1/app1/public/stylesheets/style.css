@@ -1,0 +1,19 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.page-header {
+    height: 600px;
+    background-image: url(/images/home.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.active {
+    color: darkorange;
+}

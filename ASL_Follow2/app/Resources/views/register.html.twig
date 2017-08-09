@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Register</h1>
+        <p>Enter requested information to sign up with us!</p>
+        
+        {{ form_errors(form) }}
+        {{ form_start(form, {"method":"POST"}) }}
+        {{ form_end(form) }}
+      </div>
+    </div>
+{% endblock %}

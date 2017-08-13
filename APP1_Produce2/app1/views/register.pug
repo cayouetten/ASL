@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  h1= title
+
+  div.container
+    form(method="POST" action="/contactRegister" enctype="X-www-form-urlencoded")
+      div.form-group
+        label(for="name") Name
+        input#name.form-control(name="name", type="text", placeholder="Enter name", value=name)
+
+      div.form-group
+        label(for="email") Email address
+        input#email.form-control(name="email", type="email", placeholder="Enter email", value=email)
+
+      div.form-group
+        label(for="password") Your password
+        input#password.form-control(name="password", type="password", placeholder="Create password")
+
+      div.form-group
+        label(for="verifyPassword") Verify password
+        input#verifyPassword.form-control(name="verifyPassword", type="password", placeholder="Verify password")
+        
+      div.form-group
+        label(for="inputFile") File input
+        input#inputFile.form-control-file(name="inputFile", type="file", value=inputFile)
+        
+      div.form-group
+        div.formErr #{formErr}
+
+      div.form-group
+        input#submit.button.btn.btn-primary(type="submit")

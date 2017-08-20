@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  br
+  br
+  ul
+    each user in users
+      p #{user.name} #{user.lastname} #{user.email}

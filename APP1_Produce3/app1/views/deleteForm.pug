@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= title
+  
+  each user in users
+    div.container
+      form(method="POST" action="/deleteUser/"+user.id enctype="application/x-www-form-urlencoded")
+        div.form-group
+          p Id: #{user.id}
+
+        div.form-group
+          p #{user.name} #{user.lastname} #{user.email}
+
+        div.form-group
+          input#submit.button.btn.btn-primary(type="submit", value="Delete")

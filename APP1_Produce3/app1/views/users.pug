@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  br
+  br
+  h3 Add a new user on the register page.
+  br
+  ul
+    each user in users
+      p #{user.name} #{user.lastname} #{user.email}
+      a.btn.btn-primary(href="/updateForm/"+user.id) update
+      a.btn.btn-primary(href="/deleteForm/"+user.id) delete

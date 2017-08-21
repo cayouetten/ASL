@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  h1= title
+
+  div.container
+    form(method="POST" action="/addUser" enctype="application/x-www-form-urlencoded")
+      div.form-group
+        label(for="name") Name
+        input#name.form-control(name="name", type="text", placeholder="Enter first name", value=name)
+
+      div.form-group
+        label(for="lastname") Lastname
+        input#password.form-control(name="lastname", type="text", placeholder="Enter last name", value=lastname)
+
+      div.form-group
+        label(for="email") Email
+        input#email.form-control(name="email", type="email", placeholder="Enter email", value=email)
+
+      div.form-group
+        div.formErr #{formErr}
+
+      div.form-group
+        input#submit.button.btn.btn-primary(type="submit")

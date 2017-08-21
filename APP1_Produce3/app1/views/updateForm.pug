@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  h1= title
+  
+  each user in users
+    div.container
+      form(method="POST" action="/updateUser/"+user.id enctype="application/x-www-form-urlencoded")
+        div.form-group
+          p Id: #{user.id}
+
+        div.form-group
+          label(for="name") Name
+          input#updateName.form-control(name="name", type="text", placeholder="Update first name", value=user.name)
+
+        div.form-group
+          label(for="lastname") Lastname
+          input#updatePassword.form-control(name="lastname", type="text", placeholder="Update last name", value=user.lastname)
+
+        div.form-group
+          label(for="email") Email
+          input#updateEmail.form-control(name="email", type="email", placeholder="Update email", value=user.email)
+
+        div.form-group
+          div.formErr #{formErr}
+
+        div.form-group
+          input#submit.button.btn.btn-primary(type="submit", value="Update")

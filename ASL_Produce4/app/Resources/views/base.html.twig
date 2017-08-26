@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="../../favicon.ico">
+
+        <title>{% block title %} ASL NMC {% endblock %}</title>
+
+        {% block stylesheets %}
+              <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}" />
+              <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap-theme.min.css')}}" />
+
+              <!-- Symfony -->
+              <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        {% endblock %}
+        
+        <style>
+            .jumbotron{
+                padding-top: 58px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container"><!-- TOP NAVIGATION -->
+          <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{ path('home') }}">ASL</a>
+              </div>
+              <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                  <li {% if currentRoute == "home" %} class="active"{% endif %}><a href="{{ path('home') }}">Home</a></li>
+                  <li {% if currentRoute == "about" %} class="active"{% endif %}><a href="{{ path('about') }}">About</a></li>
+                  <li {% if currentRoute == "contact" %} class="active"{% endif %}><a href="{{ path('contact') }}">Contact</a></li>
+                  <li {% if currentRoute == "login" %} class="active"{% endif %}><a href="{{ path('loginForm') }}">Login</a></li>
+                  <li {% if currentRoute == "register" %} class="active"{% endif %}><a href="{{ path('registerForm') }}">Register</a></li>
+                </ul>
+              </div><!--/.navbar-collapse -->
+            </div>
+          </nav>
+        </div><!-- container -->
+        
+        {% block body %}
+        {% endblock %}
+        
+        <!-- FOOTER -->
+        <div class="container">
+            <footer>
+                <p>&copy; 2017 Nicole Cayouette, ASL</p>
+            </footer>
+        </div>
+        
+        {% block javascripts %}
+            <!-- Bootstrap core JavaScript -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+            <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+            <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>

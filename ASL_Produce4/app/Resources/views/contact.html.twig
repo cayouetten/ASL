@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Contact</h1>
+        <p>Fill out the information below to contact us!</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <form id="contactForm">
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Email">
+        </div>
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input name="name" type="name" class="form-control" id="name" placeholder="Enter Name">
+        </div>
+
+        <div class="form-group">
+            <label for="select">Purpose</label>
+            <select name="select" class="form-control" id="select">
+                <option>Inquiry</option>
+                <option>Compliment</option>
+                <option>Complaint</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="textarea">Message</label>
+            <textarea name="textarea" class="form-control" id="textarea" rows="3"></textarea>
+        </div>
+
+        <fieldset class="form-group">
+            <label>Okay to email?</label>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input name="radios1" type="radio" class="form-check-input radios" id="radios1" value="YES" checked>
+                    Yes, please!
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input  name="radios2" type="radio" class="form-check-input radios" id="radios2" value="NO">
+                    No, thank you.
+                </label>
+            </div>
+        </fieldset>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+      <hr>
+        
+    </div> <!-- /container -->
+{% endblock %}
